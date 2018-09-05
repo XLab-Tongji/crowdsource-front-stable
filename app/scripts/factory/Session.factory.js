@@ -23,6 +23,14 @@ angular.module('crowdsourcing')
                 });
             },
 
+            beDeveloper: function () {
+                return $resource(account_base_Url + '/developer', {}, {
+                    'post': {
+                        method: 'POST'
+                    }
+                });
+            },
+
         };
 
     });

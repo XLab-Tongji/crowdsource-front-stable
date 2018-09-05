@@ -104,21 +104,23 @@ app.controller('EnrollListController', ['$scope', '$state', '$rootScope', 'Alert
                 if (data.result != null) {
                     if (data.result[0].username == SessionService.getCurrentUser()) {
                         ToasterTool.error('不能报名自己创建的项目');
-                        return
+                    }
+                    else{
+                        ProjectFactory.enroll().post({
+                            "username": SessionService.getCurrentUser(),
+                            "project_id": id
+                        }).$promise.then(function (data) {
+                            if (data.status == 200) {
+                                ToasterTool.success('报名成功');
+                            } else if (data.status == 500) {
+                                ToasterTool.error('报名失败', '不能重复报名');
+                            }
+                        })
                     }
                 }  
             })
 
-            ProjectFactory.enroll().post({
-                "username": SessionService.getCurrentUser(),
-                "project_id": id
-            }).$promise.then(function (data) {
-                if (data.status == 200) {
-                    ToasterTool.success('报名成功');
-                } else if (data.status == 500) {
-                    ToasterTool.error('报名失败', '不能重复报名');
-                }
-            })
+            
         }
 
     }]);

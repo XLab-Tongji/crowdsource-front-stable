@@ -7,6 +7,7 @@ app.controller('RegisterController', ['$scope', '$state', '$rootScope', 'AlertTo
 
         function init() {
             $scope.register = register;
+            $scope.adddevloper = adddevloper;
         }
 
         function register() {
@@ -34,6 +35,31 @@ app.controller('RegisterController', ['$scope', '$state', '$rootScope', 'AlertTo
                         ToasterTool.error('错误', data.message);
                     }
                 });
+
+        }
+
+        function.adddevloper(){
+            var data = {};
+            data.dev_domain=$scope.dev_domain;
+            data.dev_intro=$scope.dev_intro;
+            data.dev_project=$scope.dev_project;
+            
+            data.username=SessionService.getCurrentUser();
+
+            SessionFactory.beDeveloper().post({
+                
+                    'username':data.username,
+                    'dev_domain':data.dev_domain,
+                    'dev_intro':data.dev_intro,
+                    'dev_project':data.dev_project
+            }).$promise.then(function (data) {
+                    console.log(data);
+                    if (data.status == 200) {
+                        ToasterTool.success('成为开发者！');
+                    } else{//} if (data.status == 500) {
+                        ToasterTool.error('创建失败');
+                    }
+            })
 
         }
 

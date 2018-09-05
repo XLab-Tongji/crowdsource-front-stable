@@ -13,24 +13,18 @@
                             <table class="table table-hover issue-tracker">
                                 <tbody >
                                 <tr>
-                                    <td>项目标识</td>
-                                    <td>项目名称/类别</td>
+                                    <td>项目名称</td>
+                                    <td>项目类别</td>
                                     <td>项目创建者</td>
                                     <td>项目创建时间</td>
                                     
                                 </tr>
                                 <tr ng-repeat="x in result">
                                     <td>
-                                        <span class="label label-primary">项目标识</span>
+                                        {{x.project_name}}
                                     </td>
                                     <td class="issue-info">
-                                        <a href="#">
-                                            {{x.project_name}}
-                                        </a>
-
-                                        <small>
-                                            {{x.project_type}}
-                                        </small>
+                                        {{x.project_type}}
                                     </td>
                                     <td>
                                          {{x.username}}
@@ -39,8 +33,8 @@
                                         {{x.create_date |  date:'medium'}}
                                     </td>
                                     <td class="text-right">
-                                        <button class="btn btn-white btn-xs"> 查看</button>
-                                        <button class="btn btn-white btn-xs"> 取消报名</button>
+                                        <!-- <button ng-click="()" class="btn btn-white btn-xs"> 查看</button> -->
+                                        <button ng-click="cancelenroll(x.project_id)" class="btn btn-white btn-xs"> 取消报名</button>
                                     </td>
                                 </tr>
                                 </tbody>
