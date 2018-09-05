@@ -13,7 +13,7 @@ app.controller('EnrollListDetailController', ['$scope', '$state', '$rootScope', 
             $scope.cancelenroll = cancelenroll;
             displayenrollcount($stateParams.id);
             $scope.gotomemberlist=gotomemberlist;
-
+            $scope.user = SessionService.getCurrentUser();
         }
 
         function getprojectdetail() {

@@ -51,6 +51,12 @@ app.controller('EnrollListController', ['$scope', '$state', '$rootScope', 'Alert
             }).$promise.then(function (data) {
                 if (data.result != null) {
                     var result = data.result[1];
+                    for (var i = 0; i < result.length; i++) {
+                        if (result[i].state == 1) {
+                            result.splice(i, 1);
+                            i--;
+                        }
+                    }
                     var pagedata=data.result[0].totalPage;
                     var pagenow=data.result[0].currentPage;
                     $scope.pagenow=pagenow;

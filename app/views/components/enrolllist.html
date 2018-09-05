@@ -1,5 +1,5 @@
 <div class="col-md-3" ng-repeat="x in result">
-	<div class="ibox">
+	<div class="ibox" ng-if="x.state == 0">
 		<div class="ibox-content product-box">
 
 			<div>
@@ -23,7 +23,7 @@
 
 				 
 					<a ng-click=getprojectdetail(x.project_id) class="btn btn-xs btn-outline btn-primary">详情 <i class="fa fa-long-arrow-right"></i> </a>
-					<a ng-click=enrollproject(x.project_id) class="btn btn-xs btn-outline btn-primary">报名 <i class="fa fa-long-arrow-right"></i> </a>
+					<a ng-click=enrollproject(x.project_id) ng-if="x.username != user" class="btn btn-xs btn-outline btn-primary">报名 <i class="fa fa-long-arrow-right"></i> </a>
 
 				</div>
 			</div>
