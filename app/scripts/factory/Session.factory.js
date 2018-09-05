@@ -31,6 +31,22 @@ angular.module('crowdsourcing')
                 });
             },
 
+            userIdByName: function () {
+                return $resource(account_base_Url + '/user/:name', { name: '@name' }, {
+                    'get': {
+                        method: 'GET'
+                    }
+                })
+            },
+
+            devByName: function () {
+                return $resource(account_base_Url + '/developer/:name', { name: '@name' }, {
+                    'get': {
+                        method: 'GET'
+                    }
+                })
+            }
+
         };
 
     });

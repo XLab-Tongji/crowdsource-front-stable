@@ -22,28 +22,24 @@ app.controller('EnrollDevlistController', ['$scope', '$state', '$rootScope', 'Al
                 "username":SessionService.getCurrentUser()
 
             }).$promise.then(function (data) {
-                if (data.result != null) {
-                    var result = data.result;
-                    $scope.result = result;
-
-                } else {
-                    ToasterTool.error('获取失败', '请重试');
-                }
+                var result = data.result;
+                $scope.result = result;
             })
         }
 
         function cancelenroll(id) {
-            console.log(id)
             ProjectFactory.cancelenroll().delete({
                 "dev_username": SessionService.getCurrentUser(),
                 "enroll_project_id": id
             }).$promise.then(function (data) {
                 if (data.status == 200) {
                     ToasterTool.success("取消报名成功");
+                    getenrolllist();
                 } else if (data.status == 500) {
                     ToasterTool.error("报名取消失败");
                 }
             })
+            x
         }
 
 

@@ -147,13 +147,13 @@ angular.module('crowdsourcing')
                 .state('app.main.profile', {
                     url: "/profile",
                     templateUrl: "views/components/profile.html",
-                    controller:'RegisterController',
+                    controller:'ProfileController',
                     resolve: {
                         controller: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
 
                                 'lib/libs/sparkline/jquery.sparkline.min.js',
-                                'scripts/controller/portal/Register.controller.js',
+                                'scripts/controller/portal/Profile.controller.js',
                                 'scripts/factory/Session.factory.js'
                             ]);
                         }]
