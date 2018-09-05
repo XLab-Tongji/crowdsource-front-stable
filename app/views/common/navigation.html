@@ -5,12 +5,6 @@
 
 				<div class="profile-element" uib-dropdown>
 					<img alt="image" class="img-circle mid-image" ng-src="{{user.avatarUrl?user.avatarUrl:'/file/default.jpg'}}" />
-					<div>
-						<span class="clear">
-                              <span class="block m-t-xs">
-                                  <strong class="font-bold">{{user}}</strong>
-                        
-                  </div>
                    <!--<ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
                       <li><a ui-sref="app.profile">Profile</a></li>
                       <li><a ui-sref="app.contacts">Contacts</a></li>
@@ -20,7 +14,6 @@
                   </ul> -->
               </div>
               <div class="logo-element">
-                  X
               </div>
 
             </li>
@@ -28,11 +21,11 @@
             <li ng-class="{active: $state.includes('app.main.form')}">
                 <a ui-sref="app.main.form"><i class="fa fa-tasks"></i> <span class="nav-label">创建需求</span> </a>
 			</li>
-			<li ng-class="{active: $state.includes('app.main.enrollist')}">
-				<a ui-sref="app.main.enrollist"><i class="fa fa-tasks"></i> <span class="nav-label">众包报名</span> </a>
-			</li>
 			<li ng-class="{active: $state.includes('app.main.prolist' || 'app.main.detail')}">
 				<a ui-sref="app.main.prolist"><i class="fa fa-tasks"></i> <span class="nav-label">我的发布</span> </a>
+			</li>
+			<li ng-class="{active: $state.includes('app.main.enrollist')}">
+				<a ui-sref="app.main.enrollist"><i class="fa fa-tasks"></i> <span class="nav-label">众包市场</span> </a>
 			</li>
 			<li ng-class="{active: $state.includes('app.main.develoenrollpdetail')}">
 				<a ui-sref="app.main.develoenrollpdetail"><i class="fa fa-tasks"></i> <span class="nav-label">我的报名</span> </a>
@@ -41,7 +34,7 @@
 				<a ui-sref="app.main.paticipationdetail"><i class="fa fa-tasks"></i> <span class="nav-label">我的开发</span> </a>
 			</li>
 			<li ng-class="{active: $state.includes('app.main.profile')}">
-				<a ui-sref="app.main.profile"><i class="fa fa-tasks"></i> <span class="nav-label">我的信息</span> </a>
+				<a ui-sref="app.main.profile"><i class="fa fa-tasks"></i> <span class="nav-label">我是开发者</span> </a>
 			</li>
 
 

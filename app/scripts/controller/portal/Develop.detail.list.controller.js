@@ -25,9 +25,7 @@ app.controller('DevelopListDetail', ['$scope', '$state', '$rootScope', 'AlertToo
                     var result = data.result;
                     $scope.result = result;
 
-                } else {
-                    ToasterTool.error('获取失败', '请重试');
-                }
+                } 
             })
         }
 
