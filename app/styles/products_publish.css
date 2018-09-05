@@ -1,0 +1,21 @@
+.publish_step_title{
+	font-size: 22px;
+}
+body{
+	background: #F4F4F4;
+}
+.publish_step_describe{
+	background:#F4F4F4;
+}
+.project_detail{
+	border: 1px solid black;
+	border-radius: 5px;
+	height: 200px;
+	width: 300px;
+	padding: 15px;
+	margin-bottom: 20px;
+}
+.area_text{
+	height: 200px;
+	width: 300px;
+}
