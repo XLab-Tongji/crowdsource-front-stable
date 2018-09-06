@@ -45,6 +45,14 @@ angular.module('crowdsourcing')
                         method: 'GET'
                     }
                 })
+            },
+
+            getMobileByName: function () {
+                return $resource(account_base_Url + '/contact/:name', { name: '@name' }, {
+                    'get': {
+                        method: 'GET'
+                    }
+                })
             }
 
         };

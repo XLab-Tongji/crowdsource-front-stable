@@ -16,6 +16,7 @@
                                     <td>项目名称</td>
                                     <td>项目类别</td>
                                     <td>项目创建者</td>
+                                    <td>联系方式</td>
                                     <td>项目创建时间</td>
                                     
                                 </tr>
@@ -28,6 +29,11 @@
                                     </td>
                                     <td>
                                          {{x.username}}
+                                    </td>
+                                    <td>
+                                         {{x.mobile}}
+                                         <br>
+                                         {{x.email}}
                                     </td>
                                     <td>
                                         {{x.create_date |  date:'medium'}}
