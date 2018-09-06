@@ -56,6 +56,7 @@ app.controller('ProfileController', ['$scope', '$state', '$rootScope', 'AlertToo
                     }).$promise.then(function (data) {
                             if (data.status == 200) {
                                 ToasterTool.success('成为开发者！');
+                                checkIfDevloper();
                             } else{
                                 ToasterTool.error('创建失败');
                             }
